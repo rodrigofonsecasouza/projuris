@@ -1,0 +1,23 @@
+<div class="mx-auto col-9">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Descrição</th>
+                <th>URL</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pokemon of pokemons">
+                <td>{{pokemon.name}}</td>
+                <td>{{pokemon.url}}</td>
+                <td>
+                    <button type="button" class="btn btn-tw btn-lg" (click)="clickStar(pokemon)">
+                        <i [ngClass]="favoriteClass(pokemon)"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <pro-pagination [itemsSize]="count" (changePage)="onChangePage($event)"></pro-pagination>
+</div>

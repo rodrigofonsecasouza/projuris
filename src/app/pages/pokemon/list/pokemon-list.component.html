@@ -1,0 +1,5 @@
+<h4 class="text-center">Pokémons | ProJuris</h4>
+<ap-search (onTyping)="filter = $event" [value]="filter">
+</ap-search>
+<pro-pokemon-table [pokemons]="pokemons | filterByDescription: filter" [count]="count"
+    (changePage)="onChangePage($event)"></pro-pokemon-table>
